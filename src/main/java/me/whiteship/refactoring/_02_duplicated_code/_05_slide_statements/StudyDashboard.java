@@ -10,6 +10,9 @@ import java.util.Set;
 
 public class StudyDashboard {
 
+    /**
+     * 변수는 사용하기 전에 선언하기
+     */
     private void printParticipants(int eventId) throws IOException {
         // Get github issue to check homework
         GitHub gitHub = GitHub.connect();
@@ -43,8 +46,4 @@ public class StudyDashboard {
         studyDashboard.printReviewers();
         studyDashboard.printParticipants(15);
     }
-
-
-
-
 }
