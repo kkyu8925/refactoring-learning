@@ -11,6 +11,4 @@ public record Participant(String username, Map<Integer, Boolean> homework) {
     public void setHomeworkDone(int index) {
         this.homework.put(index, true);
     }
-
-
 }

@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Order {
 
-    private LocalDate placedOn;
-    private String deliveryState;
+    private final LocalDate placedOn;
+    private final String deliveryState;
 
     public Order(LocalDate placedOn, String deliveryState) {
         this.placedOn = placedOn;
