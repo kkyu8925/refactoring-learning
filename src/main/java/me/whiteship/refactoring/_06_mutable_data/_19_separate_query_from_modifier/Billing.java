@@ -2,24 +2,22 @@ package me.whiteship.refactoring._06_mutable_data._19_separate_query_from_modifi
 
 public class Billing {
 
-    private Customer customer;
+    private final Customer customer;
 
-    private EmailGateway emailGateway;
+    private final EmailGateway emailGateway;
 
     public Billing(Customer customer, EmailGateway emailGateway) {
         this.customer = customer;
         this.emailGateway = emailGateway;
     }
 
-    public double getTotalOutstandingAndSendBill() {
-        double result = customer.getInvoices().stream()
+    public double totalOutstanding() {
+        return customer.getInvoices().stream()
                 .map(Invoice::getAmount)
                 .reduce((double) 0, Double::sum);
-        sendBill();
-        return result;
     }
 
-    private void sendBill() {
+    public void sendBill() {
         emailGateway.send(formatBill(customer));
     }
 
