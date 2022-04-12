@@ -8,9 +8,9 @@ import java.util.List;
 
 public class StudyPrinter {
 
-    private int totalNumberOfEvents;
+    private final int totalNumberOfEvents;
 
-    private List<Participant> participants;
+    private final List<Participant> participants;
 
     public StudyPrinter(int totalNumberOfEvents, List<Participant> participants) {
         this.totalNumberOfEvents = totalNumberOfEvents;
@@ -59,8 +59,8 @@ public class StudyPrinter {
      */
     private String checkMark(Participant p, int totalEvents) {
         StringBuilder line = new StringBuilder();
-        for (int i = 1 ; i <= totalEvents ; i++) {
-            if(p.homework().containsKey(i) && p.homework().get(i)) {
+        for (int i = 1; i <= totalEvents; i++) {
+            if (p.homework().containsKey(i) && p.homework().get(i)) {
                 line.append("|:white_check_mark:");
             } else {
                 line.append("|:x:");

@@ -26,7 +26,7 @@ public class StudyDashboard {
     }
 
     private Participant findParticipant(String username, List<Participant> participants) {
-        Participant participant = null;
+        Participant participant;
         if (participants.stream().noneMatch(p -> p.username().equals(username))) {
             participant = new Participant(username);
             participants.add(participant);
